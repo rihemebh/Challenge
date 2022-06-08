@@ -21,6 +21,7 @@ const pages = [{name: "Home", link: "/"},{name: "Quotes", link: "/quotes"}];
 const ResponsiveAppBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [saved, setSaved] = React.useState([]);
+  
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -36,7 +37,7 @@ const ResponsiveAppBar = () => {
     if(list){
       setSaved(list)
     }
-  },[])
+  },[localStorage.getItem('saved')])
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -175,10 +176,10 @@ const ResponsiveAppBar = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
        
-          {saved.length >0? saved.map((item)=>
+          {saved.length >0? saved.map((item, index)=>
           {
-            return  <MenuItem><div title={item.text} className="quote-text">{item.text} <hr/></div>      </MenuItem>
-          }) : <MenuItem>No quotes saved</MenuItem>}
+            return  <MenuItem><div title={item.text} className="quote-text"><NavLink to={`/quote/${index}`}>{item.text} </NavLink><hr/></div>      </MenuItem>
+          }) : <MenuItem >No quotes saved</MenuItem>}
 
         </Menu>
          

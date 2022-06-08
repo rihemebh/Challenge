@@ -22,7 +22,9 @@ function Quote(props) {
 
   return (
       <div className="card-container">
-        <Button size="small " className="button-save" onClick={props.previous}><ArrowCircleLeftIcon /></Button> 
+        {props.isSingle? "":
+         <Button size="small " className="button-save" onClick={props.previous}>
+           <ArrowCircleLeftIcon /></Button> }
       
     <Card sx={{ minWidth: 275 }}>
     <CardContent>
@@ -38,15 +40,17 @@ function Quote(props) {
     <div className="icon-container">
     <img src="/téléchargement.png" className='quote-icon' width="50" />
     </div>
-    <CardActions>
-      {props.isSaved ?<Button size="small " className="button-save" onClick={props.save}><FavoriteIcon/></Button>
+    {props.isSingle? "":    <CardActions>
+      {props.saved.includes(props.index) ?<Button size="small " className="button-save" onClick={props.save}><FavoriteIcon/></Button>
       : <Button size="small " className="button-save" onClick={props.save}><FavoriteBorderIcon/></Button>}
       {props.isPaused ?<Button size="small " className="button-pause" onClick={props.play}><PlayArrowIcon/>
       </Button> : <Button size="small " className="button-pause" onClick={props.pause}><PauseIcon/></Button>}
       
-    </CardActions>
+    </CardActions>}
+ 
   </Card>
-  <Button size="small " className="button-save" onClick={props.next}><ArrowCircleRightIcon /></Button> 
+  {props.isSingle? "":<Button size="small " className="button-save" onClick={props.next}>
+    <ArrowCircleRightIcon /></Button> }
   
   </div>
   );

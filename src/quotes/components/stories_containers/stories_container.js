@@ -11,15 +11,27 @@ function StoriesContainer(props) {
     const [isFinished, setIsFinished] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
     const [isResumed, setIsResumed] = useState(false)
-    const [isSaved, setIsSaved] = useState(false)
+    const [saved, setSaved] = useState([])
+
+
 
     const save = () => {
         let list = []
-        setIsSaved(true)
-        if (localStorage.getItem("saved"))
-            list = JSON.parse(localStorage.getItem("saved"))
-        list.push(props.quotes[index])
-        localStorage.setItem("saved", JSON.stringify(list))
+        if(saved.includes(index)){
+            setSaved((prev)=>{
+               let l = prev.filter((_, i) => i!== index)
+                return [...l]
+            })
+        }else{
+            setSaved((prev)=>{
+                return [...prev, index]
+            })
+            if (localStorage.getItem("saved"))
+                list = JSON.parse(localStorage.getItem("saved"))
+            list.push(props.quotes[index])
+            localStorage.setItem("saved", JSON.stringify(list))
+        }
+       
     }
 
     const pause = () => {
@@ -43,6 +55,7 @@ function StoriesContainer(props) {
     const next = () => {
         handleNextQuote()
         setProgress(0)
+  
         setIsPaused(true)
     }
 
@@ -79,6 +92,7 @@ function StoriesContainer(props) {
                 }
                 if (!isFinished) {
                     handleNextQuote()
+                
                     return 0
                 }
                 return 1
@@ -118,7 +132,7 @@ function StoriesContainer(props) {
 
                         <QuoteCard text={quote.text} author={quote.author}
                             next={next} pause={pause} save={save} previous={previous} play={play} isPaused={isPaused}
-                            isSaved={isSaved} />
+                            saved={saved} index={index}/>
                     </> : <div className='animated-text'>Waiting for quotes</div>
                 }
 

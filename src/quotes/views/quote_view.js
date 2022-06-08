@@ -9,11 +9,11 @@ function QuoteView(props) {
   const [quotes, setQuotes] = useState([])
  
   useEffect(() => {
+    localStorage.removeItem('saved')
 
     GetQuotes(6).then((response) => {
       setQuotes(response.data.quotes)
-
-
+    
     }).catch((error) => {
       console.log(error)
     })
