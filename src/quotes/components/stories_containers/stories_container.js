@@ -16,10 +16,10 @@ function StoriesContainer(props) {
     const save = () => {
         let list = []
         setIsSaved(true)
-            if(localStorage.getItem("saved"))
-                list =  JSON.parse(localStorage.getItem("saved"))
-            list.push(props.quotes[index])  
-            localStorage.setItem("saved", JSON.stringify(list))
+        if (localStorage.getItem("saved"))
+            list = JSON.parse(localStorage.getItem("saved"))
+        list.push(props.quotes[index])
+        localStorage.setItem("saved", JSON.stringify(list))
     }
 
     const pause = () => {
@@ -70,7 +70,7 @@ function StoriesContainer(props) {
     }, [index])
 
     useEffect(() => {
-/** The timer of the progress bar */
+        /** The timer of the progress bar */
         const timer = setInterval(() => {
             setProgress((oldProgress) => {
                 if (oldProgress < 1) {
@@ -90,7 +90,7 @@ function StoriesContainer(props) {
             setProgress(1)
         }
         if (isPaused) {
-    
+
             clearInterval(timer)
         }
         return () => {
@@ -103,22 +103,9 @@ function StoriesContainer(props) {
 
 
             <div className='progress-bar'>
-                <div className="progressbar-bg" style={{
-                    height: "2px", maxWidth: "100%", background: "red",
-                    margin: "2px", borderRadius: "2px", transition: "all 400ms ease-in-out",
-                    width: "100%", opacity: "1"
-                }}>
-                    <div className="bar" style={{
-                        background: 'lightgrey', height: '100%', maxWidth: '100%',
-                        borderRadius: '2px', transformOrigin: 'left center', backfaceVisibility: 'hidden',
-                        perspective: '1000px', width: '100%'
-                    }}>
-                        <div className="progress" style={{
-                            transform: `scaleX(${progress}) `, background: "#0d28f2",
-                            height: "100%", maxWidth: "100%", borderRadius: "2px", transformOrigin: "left center",
-                            backfaceVisibility: "hidden", perspective: "1000px"
-                        }}>
-
+                <div className="progressbar-bg">
+                    <div className="bar">
+                        <div className="progress" style={{transform: `scaleX(${progress}) `}}>
                         </div>
                     </div>
 
@@ -133,7 +120,6 @@ function StoriesContainer(props) {
                             next={next} pause={pause} save={save} previous={previous} play={play} isPaused={isPaused}
                             isSaved={isSaved} />
                     </> : <div className='animated-text'>Waiting for quotes</div>
-
                 }
 
             </div>

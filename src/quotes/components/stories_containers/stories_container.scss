@@ -119,3 +119,38 @@
 
 
 }
+
+.progressbar-bg {
+    height: 2px;
+    max-width: "100%";
+    //background: "red",
+    margin: 2px;
+    border-radius: 2px;
+    transition: all 400ms ease-in-out;
+    width: 100%;
+    opacity: 1;
+
+    .bar {
+        background: lightgrey;
+        height: 100%;
+        max-width: 100%;
+
+        border-radius: 2px;
+        transform-origin: left center;
+        backface-visibility: hidden;
+        perspective: 1000px;
+        width: 100%;
+
+        .progress {
+            background: $blue;
+            height: 100%;
+            max-width: 100%;
+            border-radius: 2px;
+            transform-origin: left center;
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+    }
+
+
+}
