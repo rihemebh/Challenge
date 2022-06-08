@@ -1,0 +1,22 @@
+
+
+
+.text-transition {
+    max-height: 90vh;
+
+display: block;
+z-index: -3;
+    overflow: hidden;
+    animation-duration: 10s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-top: 60%;
+    }
+    to {
+      margin-top: 28%;
+
+    }
+  }

@@ -1,0 +1,55 @@
+
+@import "../../../shared/variables.scss";
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    color: $blue !important;
+}
+
+.card-quote{
+    height : 100px
+}
+
+.card-container{
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between ;
+    align-items: center;
+}
+.css-pwngrv-MuiPaper-root-MuiCard-root{
+    border-radius: 10px !important;
+    width : 900px !important;
+}
+
+.button-skip{
+ color: black !important;
+}
+
+.icon-container{
+    margin-right: 20px;
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.quote-icon{
+padding-top: -10px;
+padding-left: -10px;
+}
+
+.css-46bh2p-MuiCardContent-root {
+     padding: 0 !important;
+}
+
+.css-1t6e9jv-MuiCardActions-root {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 8px;
+    justify-content: center;
+
+}
