@@ -16,8 +16,8 @@ So let's see what we have :
 
 ## API consuming : 
 
-API : https://goquotes.docs.apiary.io/#reference/get-randomquote(s)/apiv1randomcount/get-random-quote(s)-filtered-by-given-type
-Package : axios
+- API : https://goquotes.docs.apiary.io/#reference/get-randomquote(s)/apiv1randomcount/get-random-quote(s)-filtered-by-given-type
+- Package : axios
 
 ## Animation
 
@@ -32,8 +32,14 @@ The animation is developed from scratch with css and we have
 ## Use cases 
 
 - The user could click on the button to pause the progress and resume it whenever he wants. 
-- he could go to the next or previous quotes.
-- He could like a quote and it will be saved in the local storage since I only develop the front and we don't have database here. 
-- He could access saved quotes from the topbar (the front for this one is not well developed since I think it is e secondary thing I hope I am not wrong) : the user could click on dropdown menu  to get the list of quotes if he hover on it, the complete quote will be displayed as "Tooltip"
+- The user could go to the next or previous quotes.
+- The user could like a quote and it will be saved in the local storage since I only develop the front and we don't have database here. 
+- The user could access saved quotes from the appbar : the user could click on dropdown menu  to get the list of quotes, when he clicked he gets the full page 
+
+
+## Demo 
+
+https://user-images.githubusercontent.com/33090727/172731523-75e9910a-e4c0-4231-9019-34e5863cc3ef.mp4
+
 
 
