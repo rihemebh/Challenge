@@ -37,9 +37,5 @@ The animation is developed from scratch with css and we have
 - The user could access saved quotes from the appbar : the user could click on dropdown menu  to get the list of quotes, when he clicked he gets the full page 
 
 
-## Demo 
-
-https://user-images.githubusercontent.com/33090727/172731523-75e9910a-e4c0-4231-9019-34e5863cc3ef.mp4
-
 
 
